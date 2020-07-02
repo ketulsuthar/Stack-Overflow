@@ -57,3 +57,7 @@ limit 1;
 
 --H. Find the location which has maximum no of Stack Overflow users.
 select loc, count(*) as count from users group by loc order by count desc limit 2;
+
+--I. Find the total no. of answers, posts, comments created by Indian users.
+select count(*) as totalpost ,sum(p.answercount) as totalans,sum(p.commentcount) as totalcomments from users u join posts p on u.userid = p.owneruserid where lower(loc)=lower('India');
+
