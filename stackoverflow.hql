@@ -56,4 +56,4 @@ select u.displayname, p.title, p.commentcount from users u join posts p on u.use
 limit 1;
 
 --H. Find the location which has maximum no of Stack Overflow users.
-select loc, count(*) as count from users group by loc order by count desc limit 1;
+select loc, count(*) as count from users group by loc order by count desc limit 2;
