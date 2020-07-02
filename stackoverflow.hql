@@ -41,7 +41,6 @@ select avg(age) from users;
 --C. Find the display name of user who posted the oldest post on Stack Overflow (in terms of date).
 select u.displayname, p.created from users u join posts p on u.userid = p.owneruserid group by u.displayname,p.created order by p.created limit 1;
 
-
-
-
+--D. Find the display name and no. of comments done by the user who has got maximum reputation.
+select u.displayname, u.reputation, Count(*) as count from users u join comments c on u.userid = c.userid group by u.displayname,u.reputation order by u.reputation desc limit 1;
 
