@@ -9,3 +9,11 @@ row format delimited
 fields terminated by ','
 stored as textfile
 location '/user/edureka_85838/posts';
+
+--Created external table posttypes
+create external table posttypes(posttype_id int, posttype_name string)
+row format delimited
+fields terminated by ','
+stored as textfile
+location '/user/edureka_85838/posttypes';
+
