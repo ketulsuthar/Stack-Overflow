@@ -31,3 +31,7 @@ fields terminated by ','
 stored as textfile
 location '/user/edureka_85838/users';
 
+
+-- A. Find the display name and no. of posts created by the user who has got maximum reputation.
+select u.displayname, u.reputation, Count(*) as count from users u join posts p on u.userid = p.owneruserid group by u.displayname,u.reputation order by u.reputation desc limit 1;
+
