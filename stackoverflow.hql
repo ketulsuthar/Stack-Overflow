@@ -54,3 +54,6 @@ limit 1;
 --G. Find the title and owner name of post who has got maximum no. of Comment count.
 select u.displayname, p.title, p.commentcount from users u join posts p on u.userid = p.owneruserid group by u.displayname,p.title,p.commentcount order by p.commentcount desc
 limit 1;
+
+--H. Find the location which has maximum no of Stack Overflow users.
+select loc, count(*) as count from users group by loc order by count desc limit 1;
