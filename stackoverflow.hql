@@ -46,3 +46,8 @@ select u.displayname, u.reputation, Count(*) as count from users u join comments
 
 --E. Find the display name of user who has created maximum no. of posts on Stack Overflow.
 select u.displayname, Count(*) as count from users u join posts p on u.userid = p.owneruserid group by u.displayname order by count desc limit 1;
+
+--F. Find the owner name and id of user whose post has got maximum no. of view counts so far.
+select u.displayname, u.userid, p.viewcount from users u join posts p on u.userid = p.owneruserid group by u.displayname,u.userid,p.viewcount order by p.viewcount desc
+limit 1;
+
