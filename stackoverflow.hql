@@ -17,3 +17,9 @@ fields terminated by ','
 stored as textfile
 location '/user/edureka_85838/posttypes';
 
+-- Created external table comments
+create external table comments(comments_id bigint, userid bigint)
+row format delimited
+fields terminated by ','
+stored as textfile
+location '/user/edureka_85838/comments';
