@@ -44,3 +44,5 @@ select u.displayname, p.created from users u join posts p on u.userid = p.owneru
 --D. Find the display name and no. of comments done by the user who has got maximum reputation.
 select u.displayname, u.reputation, Count(*) as count from users u join comments c on u.userid = c.userid group by u.displayname,u.reputation order by u.reputation desc limit 1;
 
+--E. Find the display name of user who has created maximum no. of posts on Stack Overflow.
+select u.displayname, Count(*) as count from users u join posts p on u.userid = p.owneruserid group by u.displayname order by count desc limit 1;
