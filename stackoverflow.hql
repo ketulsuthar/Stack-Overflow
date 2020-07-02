@@ -51,3 +51,6 @@ select u.displayname, Count(*) as count from users u join posts p on u.userid = 
 select u.displayname, u.userid, p.viewcount from users u join posts p on u.userid = p.owneruserid group by u.displayname,u.userid,p.viewcount order by p.viewcount desc
 limit 1;
 
+--G. Find the title and owner name of post who has got maximum no. of Comment count.
+select u.displayname, p.title, p.commentcount from users u join posts p on u.userid = p.owneruserid group by u.displayname,p.title,p.commentcount order by p.commentcount desc
+limit 1;
