@@ -23,3 +23,11 @@ row format delimited
 fields terminated by ','
 stored as textfile
 location '/user/edureka_85838/comments';
+
+-- Created external table users
+create external table users(userid bigint,reputation int, displayname string, loc string, age int)
+row format delimited
+fields terminated by ','
+stored as textfile
+location '/user/edureka_85838/users';
+
