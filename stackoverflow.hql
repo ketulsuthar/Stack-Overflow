@@ -4,7 +4,7 @@ create database stackoverflow;
 use stackoverflow;
 
 --  Created exernal table posts
-create external table posts(postid bigint, posttype_id int,created date, score int, viewcount int, owneruserid int, title string, answercount int,commentcount int)
+create external table posts(postid bigint, posttype_id int,created datetime, score int, viewcount int, owneruserid int, title string, answercount int,commentcount int)
 row format delimited
 fields terminated by ','
 stored as textfile
@@ -34,4 +34,12 @@ location '/user/edureka_85838/users';
 
 -- A. Find the display name and no. of posts created by the user who has got maximum reputation.
 select u.displayname, u.reputation, Count(*) as count from users u join posts p on u.userid = p.owneruserid group by u.displayname,u.reputation order by u.reputation desc limit 1;
+
+
+--B. Find the average age of users on the Stack Overflow site.
+select avg(age) from users;
+
+
+
+
 
